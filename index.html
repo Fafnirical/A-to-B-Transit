@@ -88,8 +88,7 @@
 <td></td><td></td>
 	</tr>
 </table>
-<textarea id="txtarea">
-</textarea>
+<!--  <textarea id="txtarea"> </textarea>  -->
 
 					<p class="lead">
 <!-- Insert main text body here
@@ -113,7 +112,7 @@
 
 
 
-	}
+	
 
 
 
@@ -135,13 +134,13 @@
                         success: function(data) {
                                 fromlat = $(data).find("place").attr("lat");
                                 fromlong = $(data).find("place").attr("lon");
-                                $("#txtarea").val("  " + fromlat + " " + fromlong);
+                                //	$("#txtarea").val("  " + fromlat + " " + fromlong); // Used for testing
 				// Create marker at "From" point
 				var fromloc = L.marker([fromlat, fromlong]).addTo(map);
 			        fromloc.bindPopup("<b>Current Location</b>").openPopup();
                         },
-                        error: function(data) {
-                                $("#txt").append("failure " + data); },
+                       // error: function(data) {
+                        //        $("#txt").append("failure " + data); },
                 });
 
 		// Find the destination location
@@ -152,13 +151,11 @@
                         success: function(datato) {
                                 tolat = $(datato).find("place").attr("lat");
                                 tolong = $(datato).find("place").attr("lon");
-                                $("#txtarea").val("  " + tolat + " " + tolong);
+                                	//	$("#txtarea").val("  " + tolat + " " + tolong); // Used for testing
                                 // Create marker at "To" point
                                 var toloc = L.marker([tolat, tolong]).addTo(map);
                                 toloc.bindPopup("<b>Destination Location</b>").openPopup();
-                        },
-                        error: function(data) {
-                                $("#txt").append("failure " + data); },
+                        }
                 });
 
 alert("Optimal route found!");
