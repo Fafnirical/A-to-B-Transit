@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+<style type="text/css">
+	#map { height: 500px; };
+</style>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <title>A-to-B Transit</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+
+	<!-- NAVBAR================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+				<div class="header">
+					<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+						<div class="container">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" href="index.html">A-to-B Transit</a>
+							</div>
+							<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About</a></li>
+									<li><a href="sponsors.html">Sponsors</a></li>
+								</ul>
+							</div>
+						</div>				
+					</div>
+				</div>
+			</div>
+
+
+    
+			<!-- Jumbotron================================================== -->
+			<div class="container">
+				<div class="jumbotron">
+					<h1>A-to-B Transit</h1>
+					<p class="lead">
+<!-- Insert main text body here
+-->
+
+<div id="map"></div>
+
+<script type="text/javascript">
+		//		(Latitude, longitude] zoom)
+		var map = L.map('map').setView([40.77, -74], 12);
+		L.tileLayer('http://{s}.tile.cloudmade.com/c18a309a76da47eea05b5d84c55ea2ff/997/256/{z}/{x}/{y}.png', {
+    			attribution: 'Map data &copy; [...]', 
+			maxZoom: 18
+		}).addTo(map);
+
+	var map2 = L.map('map').setView([40.77, -74], 12);
+	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib='Map data © OpenStreetMap contributors';
+	L.TileLayer(osmUrl, {attribution: osmAttrib, maxZoom: 18}).addTo(map2);	
+	</script>
+
+
+			
+
+</div>
+			</div><!-- /.Jumbotron -->
+			
+			<div class="container">
+			
+			<!-- Content goes here. -->
+
+				<hr>
+
+				<!-- FOOTER -->
+				<footer>
+					<p class="pull-right"><a href="#">Back to top</a></p>
+					<p><img src="images/columbia_logo.jpg" width="337" height="50"></p>
+				</footer>
+			</div> <!-- /container -->
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
