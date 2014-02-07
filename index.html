@@ -88,7 +88,8 @@
 <td></td><td></td>
 	</tr>
 </table>
-
+<textarea id="txtarea">
+</textarea>
 
 					<p class="lead">
 <!-- Insert main text body here
@@ -112,20 +113,59 @@
 
 
 
-	var initloc = L.marker([40.8, -73.95]).addTo(map);
-	initloc.bindPopup("<b>You are here</b>").openPopup();
+	}
 
 
 
-/**	Get user input from text input
-	$('#From').val('howdy');
-	var fromtext = $('#From').val();
-	var totext = $('#To').val();
-**/
 	$("#srch").click(function() {
 		var fromtext = $("#Fromtext").val();
 		var totext = $("#Totext").val();
-		alert("You want to go from "+fromtext+" to "+totext);
+
+		var fromlat;
+		var tolat;
+		var fromlong;
+		var tolong;
+
+
+		// Finding the starting location
+		$.ajax({
+                        type: 'GET',
+                        url: "http://nominatim.openstreetmap.org/search?q=" + fromtext + ",+New+York&format=xml&addressdetails=1",
+                        dataType: 'xml',
+                        success: function(data) {
+                                fromlat = $(data).find("place").attr("lat");
+                                fromlong = $(data).find("place").attr("lon");
+                                $("#txtarea").val("  " + fromlat + " " + fromlong);
+				// Create marker at "From" point
+				var fromloc = L.marker([fromlat, fromlong]).addTo(map);
+			        fromloc.bindPopup("<b>Current Location</b>").openPopup();
+                        },
+                        error: function(data) {
+                                $("#txt").append("failure " + data); },
+                });
+
+		// Find the destination location
+		$.ajax({
+                        type: 'GET',
+                        url: "http://nominatim.openstreetmap.org/search?q=" + totext + ",+New+York&format=xml&addressdetails=1",
+                        dataType: 'xml',
+                        success: function(datato) {
+                                tolat = $(datato).find("place").attr("lat");
+                                tolong = $(datato).find("place").attr("lon");
+                                $("#txtarea").val("  " + tolat + " " + tolong);
+                                // Create marker at "To" point
+                                var toloc = L.marker([tolat, tolong]).addTo(map);
+                                toloc.bindPopup("<b>Destination Location</b>").openPopup();
+                        },
+                        error: function(data) {
+                                $("#txt").append("failure " + data); },
+                });
+
+alert("Optimal route found!");
+		var froml = L.latLng(fromlat, fromlong);
+		var tol = L.latLng(tolat, tolong);
+		var rt = L.polyline([froml, tol]).addTo(map);
+
 	});
 
 
