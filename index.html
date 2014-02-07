@@ -3,6 +3,8 @@
 
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
 
 <style type="text/css">
 	#map { height: 500px; }
@@ -11,7 +13,7 @@
 	#To {width: 30%;}
 //	#Empty {width: 5%;}
 //	#buttarea {width: 100%;}
-	#search {width: 100%; }
+	#srch {width: 100%; }
 	#row1 {width: 100%; }
 	#row2 {width: 100%; }
 </style>
@@ -57,9 +59,10 @@
 							</div>
 							<div class="navbar-collapse collapse">
 								<ul class="nav navbar-nav">
-									<li><a href="index.html">Home</a></li>
+									<li><a href="index.html" class="active">Home</a></li>
 									<li><a href="about.html">About</a></li>
 									<li><a href="sponsors.html">Sponsors</a></li>
+                                                                        <li><a href="documentation.html">Documentation</a></li>
 								</ul>
 							</div>
 						</div>				
@@ -76,12 +79,12 @@
 
 <table id="forms">
 	<tr id="row1">
-		<td id="From">From: <input type="text" /></td>
+		<td id="From">From: <input type="text" id="Fromtext"/></td>
 		<td id="Empty">&nbsp;</td>
-		<td id="To">To: <input type="text" /></td>
+		<td id="To">To: <input type="text" id="Totext"/></td>
 	</tr>
 	<tr id="row2">
-		<td id="buttarea"><button type="submit" id="search">Go</button></td>
+		<td id="buttarea"><button type="submit" id="srch">Go</button></td>
 <td></td><td></td>
 	</tr>
 </table>
@@ -107,18 +110,24 @@
 //	var osmAttrib='Map data © OpenStreetMap contributors';
 //	L.TileLayer(osmUrl, {attribution: osmAttrib, maxZoom: 18}).addTo(map2);	
 
+
+
 	var initloc = L.marker([40.8, -73.95]).addTo(map);
 	initloc.bindPopup("<b>You are here</b>").openPopup();
 
-	// Get user input from text input
+
+
+/**	Get user input from text input
 	$('#From').val('howdy');
 	var fromtext = $('#From').val();
 	var totext = $('#To').val();
-
-	$("#search").click(function() {
-		alert('hi');
-		alert(fromtext);
+**/
+	$("#srch").click(function() {
+		var fromtext = $("#Fromtext").val();
+		var totext = $("#Totext").val();
+		alert("You want to go from "+fromtext+" to "+totext);
 	});
+
 
 /*
 	$.jqIpLocation({
@@ -156,8 +165,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
 
 <!-- Using jqIpLocation library to get IP address of user -->
 	<script type="text/javascript" src="jquery-1.6.3.min.js"></script>
