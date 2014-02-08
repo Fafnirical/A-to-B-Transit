@@ -60,10 +60,25 @@
 				<div class="jumbotron">
 					<h1>About</h1>
 					<p class="lead">
-This project was created for the Columbia University ADi 2014 Hackathon, AKA <a href="http://www.devfe.st">Devfest</a>. The goal of the project is to get a working prototype of our transit app as a web app by the end of the weeklong period. Beyond the hackathon, we hope to make our app into a fully fledged mobile app, native to Android and OSX. </p>
+This project was created for the Columbia University ADi 2014 Hackathon, AKA Devfest (see devfe.st for details). The goal of the project is to get a working prototype of our transit app as a web app by the end of the weeklong period. Beyond the hackathon, we hope to make our app into a fully fledged mobile app, native to Android and OSX.
 
-<h2>Hasn't this been done? How is A-to-B Transit special?</h2>
-<p>Yes, mapping applications have been created before, but we have a specific goal in mind. Using solely open source technologies (sorry Google Maps), we are aiming our app at tourists or visitors in New York City (and soon, the world!). With the assumption that these visitors do not have cars, we dismiss adding direct directions and show a general route, just so the user can verify they are heading in the right direction. If details are required, zooming on the route will provide them. </p>
+<div id="map"></div>
+
+<script type="text/javascript">
+		//		(Latitude, longitude] zoom)
+		var map = L.map('map').setView([40.77, -74], 12);
+		L.tileLayer('http://{s}.tile.cloudmade.com/c18a309a76da47eea05b5d84c55ea2ff/997/256/{z}/{x}/{y}.png', {
+    			attribution: 'Map data &copy; [...]', 
+			maxZoom: 18
+		}).addTo(map);
+
+	var map2 = L.map('map').setView([40.77, -74], 12);
+	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib='Map data © OpenStreetMap contributors';
+	L.TileLayer(osmUrl, {attribution: osmAttrib, maxZoom: 18}).addTo(map2);	
+	</script>
+
+
 			
 
 </div>
