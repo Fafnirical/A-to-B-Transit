@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<body>
+
+<p id="txt">hello
+</p>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("#txt").text("hello  ");
+
+//	var link = "http://routes.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/api/0.3/40.8070091,-73.9629161886402,40.7074503,-74.011171/car/shortest.js?callback=?";
+	$.getJSON("http://routes.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/api/0.3/47.25976,9.58423,47.26117,9.59882/car/shortest.js?callback=?", function(data) {
+
+//$.getJSON(link, function(data) {
+		var err = String(data.status);
+		if(err > 0) {
+			alert("Apologies, no route found. Wait for the bugs to be fixed!");
+		} else {
+	
+			var coords = String(data.route_geometry) + "";
+
+			$("#txt").text(coords);
+			var p = String(coords).split(',');
+		}
+	});
+
+
+
+/**
+	$.ajax({
+			url: "http://routes.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/api/0.3/47.25976,9.58423,47.26117,9.59882/car/shortest.js",
+			dataType: 'json',
+                        success: function(data) {
+	
+				$("#txt").html(data).attr(address);
+
+				var latitude = $(data).find("place").attr("lat");
+				var longitude = $(data).find("place").attr("lon");				
+	//			$("#txt").text($("#txt").text() + "  " + data);
+       //                       $("#txt").html("  " + latitude + " " + longitude);
+                        },
+			error: function(data) {
+				$("#txt").append("failure " + data); },
+        });
+**/
+	});
+
+
+</script>
+
+</body>
+</html>
