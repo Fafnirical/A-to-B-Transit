@@ -7,15 +7,15 @@
     <script src="dist/js/bootstrap.min.js"></script>
 
 <style type="text/css">
-	#map { height: 500px; }
-	#forms {width: 100%;}
-	#From {width: 30%;}
-	#To {width: 30%;}
+#map { height: 500px; }
+#forms {width: 100%;}
+#From {width: 30%;}
+#To {width: 30%;}
 //	#Empty {width: 5%;}
 //	#buttarea {width: 100%;}
-	#srch {width: 100%; }
-	#row1 {width: 100%; }
-	#row2 {width: 100%; }
+#srch {width: 100%; }
+#row1 {width: 100%; }
+#row2 {width: 100%; }
 </style>
 
   <head>
@@ -33,64 +33,64 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
   </head>
 
-	<!-- NAVBAR================================================== -->
+<!-- NAVBAR================================================== -->
   <body>
     <div class="navbar-wrapper">
       <div class="container">
-				<div class="header">
-					<div class="navbar navbar-inverse navbar-static-top" role="navigation">
-						<div class="container">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-								<a class="navbar-brand" href="index.html">A-to-B Transit</a>
-							</div>
-							<div class="navbar-collapse collapse">
-								<ul class="nav navbar-nav">
-									<li><a href="index.html" class="active">Home</a></li>
-									<li><a href="about.html">About</a></li>
-									<li><a href="sponsors.html">Sponsors</a></li>
+<div class="header">
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="index.html">A-to-B Transit</a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="sponsors.html">Sponsors</a></li>
                                                                         <li><a href="documentation.html">Documentation</a></li>
-								</ul>
-							</div>
-						</div>				
-					</div>
-				</div>
-			</div>
+</ul>
+</div>
+</div>	
+</div>
+</div>
+</div>
 
 
     
-			<!-- Jumbotron================================================== -->
-			<div class="container">
-				<div class="jumbotron">
-					<h1>A-to-B Transit</h1>
+<!-- Jumbotron================================================== -->
+<div class="container">
+<div class="jumbotron">
+<h1>A-to-B Transit</h1>
 
 <table id="forms">
-	<tr id="row1">
-		<td id="From">From: <input type="text" id="Fromtext"/></td>
-		<td id="Empty">&nbsp;</td>
-		<td id="To">To: <input type="text" id="Totext"/></td>
-	</tr>
-	<tr id="row2">
-		<td id="buttarea"><button type="submit" id="srch">Go</button></td>
+<tr id="row1">
+<td id="From">From: <input type="text" id="Fromtext"/></td>
+<td id="Empty">&nbsp;</td>
+<td id="To">To: <input type="text" id="Totext"/></td>
+</tr>
+<tr id="row2">
+<td id="buttarea"><button type="submit" id="srch">Go</button></td>
 <td></td><td></td>
-	</tr>
+</tr>
 </table>
-<!--  <textarea id="txtarea"> </textarea>  -->
+<!-- <textarea id="txtarea"> </textarea> -->
 
-					<p class="lead">
+<p class="lead">
 <!-- Insert main text body here
 -->
 
@@ -98,60 +98,60 @@
 
 <script type="text/javascript">
 
-		//		(Latitude, longitude] zoom)
-		var map = L.map('map').setView([40.77, -74], 12);
-		L.tileLayer('http://{s}.tile.cloudmade.com/c18a309a76da47eea05b5d84c55ea2ff/997/256/{z}/{x}/{y}.png', {
-    			attribution: 'Map data &copy; [...]', 
-			maxZoom: 18
-		}).addTo(map);
+// (Latitude, longitude] zoom)
+var map = L.map('map').setView([40.77, -74], 12);
+L.tileLayer('http://{s}.tile.cloudmade.com/c18a309a76da47eea05b5d84c55ea2ff/997/256/{z}/{x}/{y}.png', {
+     attribution: 'Map data &copy; [...]',
+maxZoom: 18
+}).addTo(map);
 
-//	var map2 = L.map('map').setView([40.77, -74], 12);
-//	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-//	var osmAttrib='Map data © OpenStreetMap contributors';
-//	L.TileLayer(osmUrl, {attribution: osmAttrib, maxZoom: 18}).addTo(map2);	
-
-
-
-	
+// var map2 = L.map('map').setView([40.77, -74], 12);
+// var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+// var osmAttrib='Map data © OpenStreetMap contributors';
+// L.TileLayer(osmUrl, {attribution: osmAttrib, maxZoom: 18}).addTo(map2);
 
 
 
-	$("#srch").click(function() {
-		var fromtext = $("#Fromtext").val();
-		var totext = $("#Totext").val();
-
-		var fromlat;
-		var tolat;
-		var fromlong;
-		var tolong;
 
 
-		// Finding the starting location
-		$.ajax({
+
+
+$("#srch").click(function() {
+var fromtext = $("#Fromtext").val();
+var totext = $("#Totext").val();
+
+var fromlat;
+var tolat;
+var fromlong;
+var tolong;
+
+
+// Finding the starting location
+$.ajax({
                         type: 'GET',
                         url: "http://nominatim.openstreetmap.org/search?q=" + fromtext + ",+New+York&format=xml&addressdetails=1",
                         dataType: 'xml',
                         success: function(data) {
                                 fromlat = $(data).find("place").attr("lat");
                                 fromlong = $(data).find("place").attr("lon");
-                                //	$("#txtarea").val("  " + fromlat + " " + fromlong); // Used for testing
-				// Create marker at "From" point
-				var fromloc = L.marker([fromlat, fromlong]).addTo(map);
-			        fromloc.bindPopup("<b>Current Location</b>").openPopup();
+                                // $("#txtarea").val(" " + fromlat + " " + fromlong); // Used for testing
+// Create marker at "From" point
+var fromloc = L.marker([fromlat, fromlong]).addTo(map);
+fromloc.bindPopup("<b>Current Location</b>").openPopup();
                         },
                        // error: function(data) {
-                        //        $("#txt").append("failure " + data); },
+                        // $("#txt").append("failure " + data); },
                 });
 
-		// Find the destination location
-		$.ajax({
+// Find the destination location
+$.ajax({
                         type: 'GET',
                         url: "http://nominatim.openstreetmap.org/search?q=" + totext + ",+New+York&format=xml&addressdetails=1",
                         dataType: 'xml',
                         success: function(datato) {
                                 tolat = $(datato).find("place").attr("lat");
                                 tolong = $(datato).find("place").attr("lon");
-                                	//	$("#txtarea").val("  " + tolat + " " + tolong); // Used for testing
+                                 // $("#txtarea").val(" " + tolat + " " + tolong); // Used for testing
                                 // Create marker at "To" point
                                 var toloc = L.marker([tolat, tolong]).addTo(map);
                                 toloc.bindPopup("<b>Destination Location</b>").openPopup();
@@ -159,54 +159,74 @@
                 });
 
 alert("Optimal route found!");
-		var froml = L.latLng(fromlat, fromlong);
-		var tol = L.latLng(tolat, tolong);
-		var rt = L.polyline([froml, tol]).addTo(map);
-
-	});
+var froml = L.latLng(fromlat, fromlong);
+var tol = L.latLng(tolat, tolong);
+var rt = L.polyline([froml, tol]).addTo(map);
 
 
-/*
-	$.jqIpLocation({
-		ip: foundip,
-		success: function(location) {
-			iplat = location.latitude;
-			iplong = location.longitude;
-		}
-	});
-*/
-	</script>
+
+var rturl = "http://routes.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/api/0.3/" + fromlat + "," + fromlong + "," + tolat + "," + tolong + "/car/shortest.js?callback=?";
+                $.getJSON(rturl, function(data) {
+
+                        var err = String(data.status); // Make sure API has found a route
+                        if(err > 0) {
+                                alert("Apologies, no route found. Wait for the bugs to be fixed!");
+                        } else {
+                                alert("Optimal route found");
+                                var coords = String(data.route_geometry); // Get lat/long coords from JSON site
+                                var p = String(coords).split(','); // split json coords
+                                var l = p.length; // number of coords given in path
+                                alert("p = " + l + " - " + p[0] + ", " + p[1]); // Testing..
+                                var linert = new Array(l/2); // Store the lat/long pairs
+                                for(var i = 0; i < l/2; i++) {
+                                        linert[i] = L.latLng(Number(p[(i*2)]), Number(p[((i*2)+1)]));
+                                }
+				
+				alert(p[3]);
+                                var m1 = L.latLng(Number(p[2]), Number(p[3]));
+                                var m2 = L.latLng(Number(p[4]), Number(p[5]));
+                          //      var lro = L.polyline([m1, m2]).addTo(map);
+				var ro = L.polyline(linert).addTo(map);
+			}
+
+		});
 
 
-			
+});
+
+
+</script>
+
+
+
 
 </div>
-			</div><!-- /.Jumbotron -->
-			
-			<div class="container">
-			
-			<!-- Content goes here. -->
+</div><!-- /.Jumbotron -->
 
-				<hr>
+<div class="container">
 
-				<!-- FOOTER -->
-				<footer>
-					<p class="pull-right"><a href="#">Back to top</a></p>
-					<p><img src="images/columbia_logo.jpg" width="337" height="50"></p>
-				</footer>
-			</div> <!-- /container -->
+<!-- Content goes here. -->
+
+<hr>
+
+<!-- FOOTER -->
+<footer>
+<p class="pull-right"><a href="#">Back to top</a></p>
+</footer>
+</div> <!-- /container -->
 
     </div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
+================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
 <!-- Using jqIpLocation library to get IP address of user -->
-	<script type="text/javascript" src="jquery-1.6.3.min.js"></script>
-	<script type="text/javascript" src="jqIpLocation.js"></script>
+<script type="text/javascript" src="jquery-1.6.3.min.js"></script>
+<script type="text/javascript" src="jqIpLocation.js"></script>
 
 
   </body>
 </html>
+
