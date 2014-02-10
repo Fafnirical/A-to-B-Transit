@@ -92,6 +92,7 @@
 
 <p class="lead">
 <!-- Insert main text body here
+				alert(p[3]);
 -->
 
 <div id="map"></div>
@@ -176,16 +177,15 @@ var rturl = "http://routes.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/api/0.
                                 var coords = String(data.route_geometry); // Get lat/long coords from JSON site
                                 var p = String(coords).split(','); // split json coords
                                 var l = p.length; // number of coords given in path
-                                alert("p = " + l + " - " + p[0] + ", " + p[1]); // Testing..
+                                alert("Coord test" + l + " - " + p[0] + ", " + p[1]); // Testing..
                                 var linert = new Array(l/2); // Store the lat/long pairs
                                 for(var i = 0; i < l/2; i++) {
                                         linert[i] = L.latLng(Number(p[(i*2)]), Number(p[((i*2)+1)]));
                                 }
 				
-				alert(p[3]);
                                 var m1 = L.latLng(Number(p[2]), Number(p[3]));
                                 var m2 = L.latLng(Number(p[4]), Number(p[5]));
-                          //      var lro = L.polyline([m1, m2]).addTo(map);
+                        //        var lro = L.polyline([m1, m2]).addTo(map);
 				var ro = L.polyline(linert).addTo(map);
 			}
 
@@ -196,8 +196,13 @@ var rturl = "http://routes.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/api/0.
 
 
 </script>
-
-
+</p>
+<p>
+Known bugs:<br>
+-First alert window must stay open until the placemarkers appear on map, otherwise route calculation fails<br>
+-Route calculation sometimes fails, either due to search terms, locations outside of NYC, or other reasons<br>
+Bear with us! This is hardly even V0.1a!
+</p>
 
 
 </div>
